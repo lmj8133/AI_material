@@ -1,0 +1,10 @@
+venv/*
+windows_venv/*
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
+*.synctex.gz
+*.dat
+*.script
