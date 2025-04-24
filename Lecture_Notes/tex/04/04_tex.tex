@@ -13,5 +13,21 @@
   \includegraphics[width=0.4\textwidth]{Fig_1-2.png}
 \end{figure}
 
-
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines = middle,
+        xlabel = $x$,
+        ylabel = {$\sigma(x)$},
+        enlargelimits,
+        xtick={-6,-4,...,6},
+        ytick={0,0.5,1},
+        domain=-6:6,
+        samples=100,
+        grid=both,
+        width=10cm,
+        height=6cm,
+    ]
+    \addplot[blue, thick] {1/(1+exp(-x))};
+    \end{axis}
+\end{tikzpicture}
 \end{document}

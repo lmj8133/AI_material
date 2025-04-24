@@ -24,25 +24,25 @@
 - **Adaptive Learning Rate**:
   - Reduce the learning rate over time for better convergence.
   - Example: \( 1/t \) decay:
-  \[
+  $$
   \eta^{(t)} = \frac{\eta_0}{t + 1}
-  \]
+  $$
 
 - **Adagrad** (**Ada**ptive **Grad**ient):
   - Adjust learning rate individually for each parameter:
-  \[
+  $$
   W^{(t+1)} = W^{(t)} - \frac{\eta_0}{\sqrt{\sum_{i=1}^t (\nabla L(W^{(i)}))^2}} \nabla L(W^{(t)})
-  \]
+  $$
 
 - **Comparison**:
   - **Vanilla Gradient Descent**:
-  \[ W^{(t+1)} = W^{(t)} - \eta \nabla L(W^{(t)}) \]
+  $$ W^{(t+1)} = W^{(t)} - \eta \nabla L(W^{(t)}) $$
   - **Adagrad** adjusts step sizes dynamically, facilitating faster convergence.
 - **Why Adagrad works?**
   - Optimal step size for a single-variable quadratic function:
-  \[
+  $$
   |x_0 + \frac{b}{2a}| = \frac{|2ax_0 + b|}{2a} = \frac{f'(x)|_{x=x_0}}{f''(x)|_{x=x_0}}
-  \]
+  $$
   - Thus, best step size is proportional to the first derivative and inversely proportional to the second derivative.
   - Adagrad approximates this by adjusting the learning rate based on historical gradients.
 - **Visualization of Effective Learning Rates**:
@@ -54,9 +54,9 @@ The following plot illustrates how Adagrad dynamically reduces the effective lea
 #### 2.2 Stochastic Gradient Descent (SGD)
 
 - SGD computes gradients using a randomly selected subset or a single data point, significantly reducing computation:
-\[
+$$
 \theta^{(t+1)} = \theta^{(t)} - \eta \nabla L^{(i)}(\theta^{(t)})
-\]
+$$
 
 #### 2.3 Feature Scaling
 
@@ -69,12 +69,12 @@ The following plot illustrates how Adagrad dynamically reduces the effective lea
 ![Gradient Descent Directions](./tex/03/Fig_3.png)
 
 - **Method (Standardization)**:
-\[
+$$
 \mu_j = \frac{1}{R}\sum_{r=1}^{R} x_j^{(r)}, \quad \sigma_j = \sqrt{\frac{1}{R}\sum_{r=1}^{R}(x_j^{(r)} - \mu_j)^2}
-\]
-\[
+$$
+$$
 x_j^{(r)} = \frac{x_j^{(r)} - \mu_j}{\sigma_j}
-\]
+$$
 
 ---
 
@@ -86,20 +86,20 @@ x_j^{(r)} = \frac{x_j^{(r)} - \mu_j}{\sigma_j}
 #### 3.2 Taylor Series
 
 - **Single-variable**:
-\[
+$$
 f(x) \approx f(x_0) + f'(x_0)(x - x_0)
-\]
+$$
 
 - **Multivariable**:
-\[
+$$
 f(x, y) \approx f(x_0, y_0) + \frac{\partial f}{\partial x}\bigg|_{x_0}(x - x_0) + \frac{\partial f}{\partial y}\bigg|_{y_0}(y - y_0)
-\]
+$$
 
 - **Gradient Descent Approximation**:
   - For a sufficiently small learning rate \(\eta\):
-\[
+$$
 \theta_1 = \theta_0 - \eta \nabla L(\theta_0)
-\]
+$$
 
 ---
 

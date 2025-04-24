@@ -18,9 +18,9 @@ Machine learning aims to find the **best possible function (model)** from a **hy
 
 The loss function for linear regression:
 
-\[
+$$
 L(w, b) = \sum_{n=1}^{N}\left(\hat{y}^{(n)} - (b + w \times x^{(n)})\right)^2
-\]
+$$
 
 where $\hat{y}^{(n)}$ is the true value and superscript $(n)$ indicates the $n^{th}$ data point.
 
@@ -33,12 +33,12 @@ In order to find **the best $f(x)$**, we need to find **the minimum of $L(w, b)$
 - Start with some initial values $w^{(0)}, b^{(0)}$
 - Repeat until convergence:
 
-\[
+$$
 w^{(t+1)} = w^{(t)} - \eta \frac{\partial L}{\partial w}\Big|_{w=w^{(t)}, b=b^{(t)}}
-\]
-\[
+$$
+$$
 b^{(t+1)} = b^{(t)} - \eta \frac{\partial L}{\partial b}\Big|_{w=w^{(t)}, b=b^{(t)}}
-\]
+$$
 
 where $\eta$ is the **learning rate**, and $t$ is epochs.
 
@@ -70,9 +70,9 @@ If we choose a more complex model, it fits the **training data** better, but **g
 
 The **regularized loss function** for polynomial regression:
 
-\[
+$$
 L(w, b) = \sum_{n = 1}^{N}\left(\hat{y}^{(n)} - \left(b + \sum_{j=1}^{d} w_j x^{(n)^j}\right)\right)^2 + \lambda \sum_{j = 1}^{d}(w_j)^2
-\]
+$$
 
 where $\lambda$ is the **regularization coefficient**.
 

@@ -8,3 +8,5 @@ windows_venv/*
 *.synctex.gz
 *.dat
 *.script
+*.md5sum
+*.tbz2
